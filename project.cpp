@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <list>
 #include <map>
@@ -43,12 +42,12 @@ public:
         cout << "Station Id :\t" << subwayId << endl;
         cout << "Station Name :\t" << stationName << endl;
         cout << "Next Station Name :\t" << nextStationName << endl;
-        cout << "Previous Station Name :\t" << previousStationName << endl;
-        cout << "Next Station Distance :\t" << distanceNextStation << endl;
-        cout << "Previous Station Details :\t" << distancePreviousStation << endl;
-        cout << "Time For Next Station :\t" << timeNextStation << endl;
-        cout << "Time For Next Station :\t" << timePreviousStation << endl;
-        cout << "Total Cost :\t" << costNextStation << endl;
+        cout << "Previous Station Name :\t" << previousStationName << " Km" << endl;
+        cout << "Next Station Distance :\t" << distanceNextStation << " Km" << endl;
+        cout << "Previous Station Details :\t" << distancePreviousStation << " Km" << endl;
+        cout << "Time For Next Station :\t" << timeNextStation << " Min" << endl;
+        cout << "Time For Next Station :\t" << timePreviousStation << " Min" << endl;
+        cout << "Total Cost :\t" << costNextStation << " RM" << endl;
         cout << "Travel Fare Station :\t" << travelFareStation << endl;
     }
 };
@@ -78,6 +77,7 @@ public:
     void printVal()
     {
 
+        /*
         cout << "Transaction Id "
              << " | "
              << "Ticket Id "
@@ -116,17 +116,16 @@ public:
              << customerIdCard
              << endl;
 
-        /*
-                cout << "Transaction Id :\t" << transactionId << endl;
-                cout << "ticket Id :\t" << ticketId << endl;
-                cout << "firstStationName :\t" << firstStationName << endl;
-                cout << "targetStationName :\t" << targetStationName << endl;
-                cout << "transactionTimeandDate :\t" << transactionTimeandDate << endl;
-                cout << "departureTime :\t" << departureTime << endl;
-                cout << "customerId :\t" << customerId << endl;
-                cout << "customerName :\t" << customerName << endl;
-                cout << "customerIdCard :\t" << customerName << endl;
-          */
+        */
+        cout << "Transaction Id :\t" << transactionId << endl;
+        cout << "ticket Id :\t" << ticketId << endl;
+        cout << "firstStationName :\t" << firstStationName << endl;
+        cout << "targetStationName :\t" << targetStationName << endl;
+        cout << "transactionTimeandDate :\t" << transactionTimeandDate << endl;
+        cout << "departureTime :\t" << departureTime << endl;
+        cout << "customerId :\t" << customerId << endl;
+        cout << "customerName :\t" << customerName << endl;
+        cout << "customerIdCard :\t" << customerIdCard << endl;
     }
 };
 
@@ -343,9 +342,9 @@ void passenger()
         totalDistance = distanceCalculation(fromStart, toEnd, subwayMap);
         totaltime = timeCalculation(fromStart, toEnd, subwayMap);
         totalExpanse = expanseCalculation(fromStart, toEnd, subwayMap);
-        cout << "Total Distance " << totalDistance << endl;
-        cout << "Total Expanse " << totalExpanse << endl;
-        cout << "Total Time " << totaltime << endl;
+        cout << "Total Distance " << totalDistance << " Km" << endl;
+        cout << "Total Expanse " << totalExpanse << " RM" << endl;
+        cout << "Total Time " << totaltime << " Min" << endl;
 
         // Ticket Purchasing
         int choose;
@@ -364,7 +363,7 @@ void passenger()
             transactionMap.insert({id, purchaseTicket(totaltime, fromStart, toEnd, subwayMap)});
             id++;
             // transactionMap[ticketID] = purchaseTicket(ticketID, totaltime, fromStart, toEnd, subwayMap);
-            cout << transactionMap.size() << endl;
+            // cout << transactionMap.size() << endl;
             int choise;
             cout << "To check your Ticket : press 1" << endl;
             cout << "Go for Main menu : press 2" << endl;
@@ -373,10 +372,10 @@ void passenger()
             if (choise == 1)
             {
                 char a;
-
+                system("CLS");
                 cout << "Your Ticket is ready" << endl;
-                cout << transactionMap.size() << endl;
-
+                // cout << transactionMap.size() << endl;
+                transactionMap.at(transactionMap.size()).printVal();
                 cout << "Press any key to go for the main menu" << endl;
                 cin >> a;
                 passenger();
@@ -401,7 +400,9 @@ void passenger()
         for (auto &pair : transactionMap)
         {
             pair.second.printVal(); // print all values in the map
+            cout << endl;
         }
+        cout << "\n";
         cout << "Delete Transaction : press 1" << endl;
         cout << "Go to Main menu: press 2" << endl;
         // select

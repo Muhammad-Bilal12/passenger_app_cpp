@@ -10,6 +10,7 @@ using namespace std;
 // Declare main function
 int main();
 void passenger();
+
 // Subway Details Class
 class SubwayDetails
 {
@@ -77,46 +78,6 @@ public:
     void printVal()
     {
 
-        /*
-        cout << "Transaction Id "
-             << " | "
-             << "Ticket Id "
-             << " | "
-             << "First Station Name "
-             << " | "
-             << "Last Station Name "
-             << " | "
-             << "Transaction Date "
-             << " | "
-             << "Departure Time "
-             << " | "
-             << "Customer Name "
-             << " | "
-             << "Customer Id "
-             << " | "
-             << "Customer IdCard"
-             << endl;
-
-        cout << transactionId
-             << " | "
-             << ticketId
-             << " | "
-             << firstStationName
-             << " | "
-             << targetStationName
-             << " | "
-             << transactionTimeandDate
-             << " | "
-             << departureTime
-             << " | "
-             << customerId
-             << " | "
-             << customerName
-             << " | "
-             << customerIdCard
-             << endl;
-
-        */
         cout << "Transaction Id :\t" << transactionId << endl;
         cout << "ticket Id :\t" << ticketId << endl;
         cout << "firstStationName :\t" << firstStationName << endl;
@@ -448,17 +409,6 @@ void passenger()
         // exit = 1;
         return;
     }
-
-    // print value
-    // subwayMap.at(1).printVal();
-
-    // Function to print all values
-    // for (auto &pair : subwayMap)
-    // {
-    //     pair.second.printVal(); //print all values in the map
-    // }
-
-    // -----end
 }
 
 // Main function
